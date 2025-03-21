@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Picture-in-Picture",
+  "version": "0.1.0",
+  "description": "Activa el modo Picture-in-Picture en videos.",
+  "permissions": ["activeTab", "scripting"],
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
