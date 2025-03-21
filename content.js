@@ -3,6 +3,7 @@ function addPiPButton() {
 
   if (videoContainer) {
     const pipButton = document.createElement("button");
+
     pipButton.className = "ytp-button";
     pipButton.innerHTML = `data-priority="7" data-tooltip-target-id="ytp-pip-button"`;
     pipButton.ariaLabel = "Picture-in-Picture";
@@ -10,6 +11,7 @@ function addPiPButton() {
 
     const updateButtonIcon = () => {
       const isPiPActive = !!document.pictureInPictureElement;
+
       pipButton.innerHTML = isPiPActive
         ? `
           <svg width="100%" height="100%" viewBox="-6 -6 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -37,6 +39,7 @@ function addPiPButton() {
 
     pipButton.addEventListener("click", () => {
       const video = document.querySelector("video");
+
       if (video && typeof video.requestPictureInPicture === "function") {
         if (document.pictureInPictureElement) {
           document.exitPictureInPicture();
